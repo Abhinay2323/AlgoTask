@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Form</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <style>
+        h2{
+            color:wheat;
+        }
+        body {
+            background-color: black;
+        }
+        .cont{
+            margin: 300px;
+        }
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+button[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+    </style>
+    
+<body>
+    
+
+
+</br></br>
+            <center><h2>USER FORM</h2></center><br>
+           <center>
+                    <div class="col-sm-4">
+                        <form action="{% url 'userform' %}" method="post">
+
+                            {% csrf_token %}
+                    
+                            Name: <input type="text" name='name'><br><br>
+                            {% if context %}
+                                
+                                    {% include "testu.html" %}
+                               
+                            {% endif %}
+  
+                            DOB: <input type="date" name='date'><br><br>
+                            Email: <input type="email" name='email'><br><br>
+                            Phone: <input type="number" name='phone_number'><br><br>
+                           
+                            <button type="submit">Submit</button>
+                    
+                        </form>
+                    </div>           
+         
+           </center>
+    
+</body>
+</html>

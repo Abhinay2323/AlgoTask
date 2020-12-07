@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Details</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    
+    <style>
+        
+    body {
+            background-color: black;
+        }
+    section{
+        padding: 35px 0;
+
+    }
+    
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  
+}
+
+   
+    
+    .details-card {
+        background: #d3d3d3;
+    }
+    
+    .card-content {
+        padding: 30px;
+    }
+    h2{
+            color:wheat;
+        }
+
+    </style>
+<body><br>
+    <center><h2>USERS</h2></center><br>
+    
+    
+        <div class="container">
+            
+            <div class="row">
+                {% for obj in list %}
+                <div class="col-md-4">
+                    
+                    <div class="card-content">
+                        <div class="card-img">
+                            <fieldset>
+                            
+                                Name : {{obj.name}}<br>
+                                Date of Birth : {{obj.dob}}<br>
+                                Email : {{obj.email}}<br>
+                                Phone number : {{obj.phone_number}}<br>
+                                <br><br>
+                            </fieldset>
+                        </div>
+                    </div><br>                 
+                    
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    
+    
+</body>
+</html>
